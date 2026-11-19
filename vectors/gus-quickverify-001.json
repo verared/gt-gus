@@ -1,0 +1,68 @@
+{
+  "schema": "gus-quickverify-001",
+  "gus_version": "2.5.0b1",
+  "profile": "Verificación rápida O(1) de consistencia interna (Cap 13.8 v1.2 del documento canónico): la marca es verificable sin red y sin acumulados de años; valida sintaxis, rangos, letra Nuvid estricta y ciclo declarado exacto. Una entrada dudosa se rechaza (false), NUNCA se normaliza a válido.",
+  "source": "ítem de mejora derivado del contraste Cap 13 v1.2 vs stack (sesión beta 2026-11): quick_verify detecta tampering NO profundo (letra, ciclo, rangos, era asumida) en O(1)",
+  "deterministic": true,
+  "note_c": "impl-c expone la misma superficie con gus_quick_verify (gus.c); JS con quickVerify (web/gerarion.mjs). Tolerancia a espacios/paradores flexibles (REGLAS 1-6) se aplica antes de la comprobación estricta en las tres implementaciones.",
+  "valid": [
+    {
+      "ts": "2031DY-03-08-T-09:30:00-SC-TCJ+0",
+      "comment": "vector normativo de gus-normative-002"
+    },
+    {
+      "ts": "2031DY-03-08-T",
+      "comment": "fecha de día sin hora"
+    },
+    {
+      "ts": "0031DY-00-03-V",
+      "comment": "Tempalum normal (año no GT: 4 días, 1-4; el Tempalum cierra el año tras el mes 12)"
+    },
+    {
+      "ts": "0001AY-00-11-B",
+      "comment": "Tempalum Gran Tempalum en la era AY (simétrico; vector gus-regression-001)"
+    },
+    {
+      "ts": "2031DY-03-08-T-21:45:10-LC-TCJ+3",
+      "comment": "ciclo LC correcto para la hora 21:45; el offset TCJ+3 no lo altera (campo solo-presentacional)"
+    },
+    {
+      "ts": "2031DY-03-08 T 09:30:00 SC TCJ+0",
+      "comment": "tolerancia de espacios (REGLA 1): la forma normalizada no altera los campos"
+    }
+  ],
+  "invalid": [
+    {
+      "ts": "2031DY-03-08-S-09:30:00-SC-TCJ+0",
+      "why": "letra Nuvid manipulada (calculada para 2031DY-03-08: T); el modo estricto RECHARA, no corrige"
+    },
+    {
+      "ts": "2031DY-03-08-T-21:45:10-SC-TCJ+0",
+      "why": "ciclo declarado SC para la hora 21:45 (esperado LC): detección de tampering del ciclo en O(1)"
+    },
+    {
+      "ts": "2031DY-03-08-T-25:00:00-SC-TCJ+0",
+      "why": "hora 25 > 23"
+    },
+    {
+      "ts": "2031DY-03-08-T-09:30:60-SC-TCJ+0",
+      "why": "segundo intercalar :60 no pertenece a la escala GUS"
+    },
+    {
+      "ts": "2031DY-02-31-A",
+      "why": "día 31 inexistente: todos los meses regulares tienen exactamente 30 días"
+    },
+    {
+      "ts": "2031DY-00-05-S",
+      "why": "Tempalum de 5 días en un año normal (2031 no es Gran Tempalum: Tempalum 1-4)"
+    },
+    {
+      "ts": "31-03-08-T",
+      "why": "era DY asumida por corrección silenciosa (REGLA 3): la verificación rápida exige la marca completa y explícita"
+    },
+    {
+      "ts": "2031DY-13-01-S",
+      "why": "mes 13 fuera de 00-12"
+    }
+  ]
+}
