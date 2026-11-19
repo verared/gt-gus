@@ -1,0 +1,31 @@
+{
+  "schema": "gerarion-export-manifest/1",
+  "module": "gt-gus",
+  "version": "3.2.2",
+  "maturity": "stable",
+  "source_repo": "verared/gerarion",
+  "source_tag": "v3.2.2",
+  "source_commit": "322a650bd6bced29492fdb2e4dd1113828421ebe",
+  "dependencies": {},
+  "files": {
+    "LICENSE": "5100ec704387838d4b95d6fd6a98d82fe8ee918e470994440c44801cd66b0cd0",
+    "LICENSES/Apache-2.0.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "LICENSES/CC-BY-4.0.txt": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+    "LICENSES/CC0-1.0.txt": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+    "LICENSES/MIT.txt": "757fbdb81df81bd060d17276424bd4fc26269e780599988c3ce8fba4260b0b20",
+    "NOTICE": "6af3a8bb6fe83f1b2d2f3d76528ab1f2b8e56da842c1de81673385821513e835",
+    "README.es.md": "cc04fe52061721498a7a9ea2582934cabba635c419906760b2aef78a2cc24498",
+    "README.md": "da07fcef9b7ff40940dbc9c4860da976747105a45742388eff226aa8ae6fa182",
+    "REUSE.toml": "a8f293e36692de60e21eafccabaa18ac25d642804b13a70f34acfa73180491d2",
+    "docs/specs/GUS.en.md": "1f14d6e15559ef14601e043a2761beb5ccf43343d40b39f5f9cde016e3a73ccd",
+    "docs/specs/GUS.es.md": "cb20c1a3b579631b1e3718bcfab6f6d465183764831dd97a01754a6dacfa81b9",
+    "impl-c/core/gus_core.c": "ce99b4d4586529ab7ce40257d4c8bd18d5482830b6f8f61053493e6bbd808b60",
+    "impl-c/core/gus_core.h": "1848d7fbabaaa42a2a679a332e385478a275003a86561242208e5adcecb26e3f",
+    "src/gerarion/core/__init__.py": "45170aa4cfd39b8ca3c8099dfbf492d5d7d00ebb8a4d33009b8d55e7a86ed4c3",
+    "src/gerarion/core/calendar.py": "d07363c8fd4efbdff9c32d3a463e10d9b56062a344b3e96a48628e80764da8c1",
+    "src/gerarion/core/format.py": "1061318651224cd089001cb442d48d40e798a8cd2ba95252edd804ae6fc66cf7",
+    "vectors/gus-normative-003.json": "3e10aad6e8a4c8819c70ee1ace01a229c04ee0b9b611e907075a3bab285e4027",
+    "vectors/gus-quickverify-001.json": "cd8fc121f28b4691fdd796462bf015d3f7e842ea9c6681b8ed3c457c87648fec",
+    "web/engine/core.mjs": "c1904876d236e580bff9bc6324d1e38efb9827662ba7159d94cb50b84d3acf1d"
+  }
+}
